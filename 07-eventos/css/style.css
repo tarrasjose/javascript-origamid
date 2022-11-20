@@ -1,0 +1,245 @@
+
+
+body, h1, h2, ul, li, p, dl, dt, dd {
+  margin: 0px;
+  padding: 0px;
+}
+
+img {
+  display: block;
+  max-width: 100%;  /*Isso faz com que ela fique responsiva*/
+}
+
+ul {
+  list-style: none; /*Apesar de não estar visivel, ele tá ali estorando para fora*/
+}
+
+body {
+  background: #faf6ed;
+  color: #222;
+  -webkit-font-smothing: antialiased;
+  display: grid;
+  grid-template-columns: 1fr 120px minmax(300px, 800px) 1fr;
+}
+
+.menu {
+  grid-column: 3 / 5;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  background: #fb5;
+
+}
+
+.menu ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.menu li a {
+  display: block;
+  padding: 10px;
+  margin-right: 10px;
+  color: #222;
+  text-decoration: none;
+  font-family: monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: .1em;/*Espaçamento entre cada letra*/
+}
+
+
+/*SECTION ANIMAIS*/
+
+
+.grid-section {
+  grid-column: 2 / 4;
+  width: 100%;
+  box-sizing: border-box; /*Que é pra ele acumular o tamanho do padding que vou colocar*/
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 90px 300px 1fr;
+  grid-gap: 20px;
+  margin-bottom: 4rem;
+}
+
+.titulo {
+  font-family: 'Playfair Display SC';
+  font-size: 6rem;
+  line-height: 1;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  grid-column: 1 / 4;
+}
+
+.animais h2 {
+  font-family: monospace;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: .1em; /*Espaço entre as letras*/
+  margin-bottom: 1rem;
+  color: #e54;
+}
+
+.animais h2::before {
+  content: '' ; /*Tem que ter mesmo se não for colocar nada*/
+  display: inline-block; /* Pra ficar na mesma linha*/
+  width: 40px;
+  height: 10px;
+  margin-right: 10px;
+  background: #fb5;
+}
+
+.animais p {
+  font-family: helvetica, Arial;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+/*FOTOS DOS ANIMAIS*/
+
+.animais-lista {
+  height: 370px;
+  overflow-y: scroll; /*O que passar do tamanho do container no eixo y,coloca um scrool*/
+  grid-column: 2;
+}
+
+/*scrool*/
+.animais-lista::-webkit-scrollbar {
+  width: 18px;
+}
+
+/*Aquilo que desce e sobe a página*/
+.animais-lista::-webkit-scrollbar-thumb {
+  background: #fb5;
+  border-left: 4px solid #faf6ed;
+  border-right: 4px solid #faf6ed;
+}
+/*O fundo do scrool, por baixo de onde desce e sobe*/
+.animais-lista::-webkit-scrollbar-track {
+  background: #faf6ed;
+}
+
+/*ANIMAIS DESCRIÇÃO*/
+
+.animais-descricao {
+  grid-column: 3;
+}
+
+.animais-descricao section {
+  margin-bottom: 3rem;
+}
+
+
+/*FAQ*/
+
+.faq-lista {
+  grid-column: 2 / 4;
+}
+
+.faq-lista dt {
+  font-family: monospace;
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: .5rem;
+  color: #e54;
+}
+
+.faq-lista dt::before {
+  content: '';
+  display: inline-block; /* Pra ficar na mesma linha*/
+  width: 20px;
+  height: 10px;
+  margin-right: 10px;
+  background: #fb5;
+}
+
+.faq-lista dd {
+  font-family: Helvetica, Arial;
+  margin-bottom: .5rem;
+  margin-left: 30px;
+}
+
+/*CONTATO*/
+
+.mapa {
+  grid-column: 2;
+}
+
+.dados {
+  grid-column: 3;
+}
+
+.dados li {
+  margin-bottom: 1rem;
+  font-family: Helvetica, Arial;
+}
+
+.dados li::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 10px;
+  margin-right: 10px;
+  background:#fb5;
+}
+
+/*FOOTER*/
+
+.copy {
+  grid-column: 3 / 5; /*Igual o menu*/
+  margin-bottom: 2rem;
+  background: #fb5;
+}
+
+.copy p {
+  padding: 20px;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+/*Teste de dark*/
+.dark {
+  background: rgba(0, 0, 0, 0.914);
+  color: white;
+}
+
+
+/*MEDIA SCREEEN*/
+
+@media (max-width: 700px) {
+
+  body {
+    grid-template-columns: 1fr;
+  }
+
+  .menu, .grid-section, .copy {
+    grid-column: 1;
+  }
+
+  .grid-section {
+    grid-template-columns: 100px 1fr;
+    grid-gap: 10px;
+  }
+
+  .animais-lista {
+    grid-column: 1;
+  }
+
+  .faq-lista, .dados, .mapa {
+    grid-column: 1 / 3;
+  }
+
+  .grid-section h1 {
+    font-size: 3rem;
+  }
+
+  .menu {
+    margin-top: 0px;
+  }
+
+  .copy {
+    margin-bottom: 0px;
+  }
+}
