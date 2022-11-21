@@ -105,6 +105,10 @@ body {
   grid-column: 2;
 }
 
+.animais-lista li {
+  cursor: pointer;
+}
+
 /*scrool*/
 .animais-lista::-webkit-scrollbar {
   width: 18px;
@@ -293,11 +297,10 @@ body {
 }
 
 /* Aqui começa animação do scroll ao descer e subir a página */
-
 .js-scroll {
   opacity: 0;
   transform: translate3d(-30px, 0, 0);
-  transition: .3s; /* O ideal é colocar o transition aqui no não ativo para ele animar tanto a entra quanto a saída */
+  transition: .3s;
 }
 
 .js-scroll.ativo {
