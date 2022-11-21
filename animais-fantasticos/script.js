@@ -79,25 +79,31 @@ initeScrollSuave();
 
 
 
-// Aqui começa animacao ao scroll
-
-const sections = document.querySelectorAll('.js-scroll');
-console.log(sections);
-const windowMetade = window.innerHeight * 0.6;
-
-function animaScroll () {
-  // console.log('funcionando');
-  sections.forEach((section) => {
-    const sectionTop = section.getBoundingClientRect().top - windowMetade;
-    // console.log(sectionTop)
-    if(sectionTop < 0) {
-      section.classList.add('ativo');
-    } else {
-      section.classList.remove('ativo');
+// Aqui começa animacao ao scroll 
+function initeAnimacaoScroll() {
+  const sections = document.querySelectorAll('.js-scroll');
+  
+  if(sections.length) {
+    const windowMetade = window.innerHeight * 0.5;
+    
+    function animaScroll() {
+      sections.forEach((section) => {
+        const sectionTop = section.getBoundingClientRect().top;
+    
+        const isSectionVisible = sectionTop - windowMetade;
+    
+        if(isSectionVisible < 0) {
+          section.classList.add('ativo');
+        } else {
+          section.classList.remove('ativo');
+        }
+      })
     }
-  })
-
+    animaScroll();
+    
+    window.addEventListener('scroll', animaScroll);
+  }
 }
-animaScroll();
+initeAnimacaoScroll();
 
-window.addEventListener('scroll', animaScroll)
+
