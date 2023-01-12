@@ -1,0 +1,16 @@
+import initeScrollSuave from "./modules/scroll-suave.js";
+import initeAnimacaoScroll from "./modules/scroll-animacao.js";
+import initAccordion from "./modules/accordion.js";
+import initTabNav from "./modules/tabnav.js";
+import initModal from "./modules/modal.js";
+
+
+
+initeScrollSuave();
+initeAnimacaoScroll();
+initAccordion();
+initTabNav();
+initModal();
+
+
+
