@@ -15,3 +15,5 @@ export default function initAccordion() {
     });
   }
 }
+
+console.log('testando webpack!');
